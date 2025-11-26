@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ekingkpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ekingkpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ekingkpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ekingkpipelinesjavascriptdocker 
+          image: mycontainerregistryekin.azurecr.io/ekingkpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
